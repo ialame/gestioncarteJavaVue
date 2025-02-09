@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - includeAll:
+      path: db/changelog/generated/
+  - includeAll:
+      path: db/changelog/manual/
+  - include:
+      file: db/changelog/manual/2025-02-10-01-create-yugioh-set.yaml
+  - include:
+      file: db/changelog/manual/2025-02-10-02-create-onepiece-set.yaml
+  - include:
+      file: db/changelog/manual/2025-02-10-03-create-lorcana-set.yaml

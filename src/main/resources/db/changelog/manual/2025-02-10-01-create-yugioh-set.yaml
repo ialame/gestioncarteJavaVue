@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-yugioh-set-1
+      author: ibrahim
+      changes:
+        - createTable:
+            tableName: yugioh_set
+            columns:
+              - column:
+                  name: id
+                  type: BINARY(16)  # Utilisez le type correct (probablement BINARY(16) ou INT, selon votre modèle)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name  # Ajoutez d'autres colonnes nécessaires à votre table
+                  type: VARCHAR(255)
+              # ... autres colonnes ...

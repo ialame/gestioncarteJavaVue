@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./src/main/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: foufafou
+      MARIADB_DATABASE: pcajuin24
+      MARIADB_USER: ia
+      MARIADB_PASSWORD: foufafou
+    ports:
+      - "3307:3306"  # Gardez 3307:3306 si vous voulez accéder depuis l'hôte sur 3307
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:
