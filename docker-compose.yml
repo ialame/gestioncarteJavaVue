@@ -23,7 +23,7 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: foufafou
-      MARIADB_DATABASE: pcajuin24
+      MARIADB_DATABASE: dev
       MARIADB_USER: ia
       MARIADB_PASSWORD: foufafou
     ports:

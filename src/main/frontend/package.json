@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "oui": "vite",
     "dev": "vite --host --debug",
     "build": "vite build",
     "preview": "vite preview",

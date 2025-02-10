@@ -62,42 +62,24 @@
 				<vue.mode>development</vue.mode>
 			</properties>
 		</profile>
-		<profile>
-			<id>test</id>
-			<properties>
-				<spring.profiles.active>test</spring.profiles.active>
-				<vue.mode>development</vue.mode>
-			</properties>
-			<build>
-				<resources>
-					<resource>
-						<directory>src/main/resources</directory>
-						<excludes>
-							<exclude>application-local.properties</exclude>
-						</excludes>
-						<filtering>true</filtering>
-					</resource>
-				</resources>
-			</build>
-		</profile>
-		<profile>
-			<id>prod</id>
-			<properties>
-				<spring.profiles.active>prod</spring.profiles.active>
-				<vue.mode>production</vue.mode>
-			</properties>
-			<build>
-				<resources>
-					<resource>
-						<directory>src/main/resources</directory>
-						<excludes>
-							<exclude>application-local.properties</exclude> <!-- Correction ici -->
-						</excludes>
-						<filtering>true</filtering>
-					</resource>
-				</resources>
-			</build>
-		</profile>
+<!--		<profile>-->
+<!--			<id>test</id>-->
+<!--			<properties>-->
+<!--				<spring.profiles.active>test</spring.profiles.active>-->
+<!--				<vue.mode>development</vue.mode>-->
+<!--			</properties>-->
+<!--			<build>-->
+<!--				<resources>-->
+<!--					<resource>-->
+<!--						<directory>src/main/resources</directory>-->
+<!--						<excludes>-->
+<!--							<exclude>application-local.properties</exclude>-->
+<!--						</excludes>-->
+<!--						<filtering>true</filtering>-->
+<!--					</resource>-->
+<!--				</resources>-->
+<!--			</build>-->
+<!--		</profile>-->
 		<!-- Profile for macOS ARM (optional) -->
 		<profile>
 			<id>macos-arm</id>
@@ -120,13 +102,6 @@
 	</profiles>
 
 	<dependencies>
-
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-liquibase</artifactId>-->
-<!--			<version>4.25.1</version>-->
-<!--		</dependency>-->
-
 
 		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -298,7 +273,6 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
-			<version>6.4.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -384,6 +358,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<!-- Remplacez par la classe principale souhaitée -->
+					<mainClass>com.pcagrade.retriever.ProfessionalCardRetriever</mainClass>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>com.github.eirslett</groupId>
@@ -444,6 +422,7 @@
 					</includes>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 </project>
